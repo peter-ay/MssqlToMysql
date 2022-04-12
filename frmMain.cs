@@ -32,11 +32,8 @@ namespace MSSQLtoMySQL
 		private System.Windows.Forms.MainMenu mainMenu1;
 		private System.Windows.Forms.MenuItem menuItem1;
 		private System.Windows.Forms.MenuItem menuItem2;
-		private System.Windows.Forms.MenuItem menuItem3;
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.Container components = null;
+        private System.Windows.Forms.MenuItem menuItem3;
+        private IContainer components;
 
 		public frmMain()
 		{
@@ -70,175 +67,179 @@ namespace MSSQLtoMySQL
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.txtMSSQLIP = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.txtMSSQLUser = new System.Windows.Forms.TextBox();
-			this.txtMSSQLPwd = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.txtMSSQLDB = new System.Windows.Forms.TextBox();
-			this.lbMSSQLTables = new System.Windows.Forms.ListBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-			this.btnExport = new System.Windows.Forms.Button();
-			this.btnGetTables = new System.Windows.Forms.Button();
-			this.mainMenu1 = new System.Windows.Forms.MainMenu();
-			this.menuItem1 = new System.Windows.Forms.MenuItem();
-			this.menuItem2 = new System.Windows.Forms.MenuItem();
-			this.menuItem3 = new System.Windows.Forms.MenuItem();
-			this.SuspendLayout();
-			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(0, 16);
-			this.label1.Name = "label1";
-			this.label1.TabIndex = 0;
-			this.label1.Text = "MSSQL Server IP:";
-			// 
-			// txtMSSQLIP
-			// 
-			this.txtMSSQLIP.Location = new System.Drawing.Point(104, 16);
-			this.txtMSSQLIP.Name = "txtMSSQLIP";
-			this.txtMSSQLIP.Size = new System.Drawing.Size(136, 20);
-			this.txtMSSQLIP.TabIndex = 1;
-			this.txtMSSQLIP.Text = "localhost";
-			this.txtMSSQLIP.TextChanged += new System.EventHandler(this.Fields_TextChanged);
-			// 
-			// label2
-			// 
-			this.label2.Location = new System.Drawing.Point(272, 16);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(32, 23);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "User:";
-			// 
-			// txtMSSQLUser
-			// 
-			this.txtMSSQLUser.Location = new System.Drawing.Point(320, 16);
-			this.txtMSSQLUser.Name = "txtMSSQLUser";
-			this.txtMSSQLUser.Size = new System.Drawing.Size(104, 20);
-			this.txtMSSQLUser.TabIndex = 3;
-			this.txtMSSQLUser.Text = "user";
-			this.txtMSSQLUser.TextChanged += new System.EventHandler(this.Fields_TextChanged);
-			// 
-			// txtMSSQLPwd
-			// 
-			this.txtMSSQLPwd.Location = new System.Drawing.Point(320, 40);
-			this.txtMSSQLPwd.Name = "txtMSSQLPwd";
-			this.txtMSSQLPwd.Size = new System.Drawing.Size(104, 20);
-			this.txtMSSQLPwd.TabIndex = 5;
-			this.txtMSSQLPwd.Text = "password";
-			this.txtMSSQLPwd.TextChanged += new System.EventHandler(this.Fields_TextChanged);
-			// 
-			// label3
-			// 
-			this.label3.Location = new System.Drawing.Point(248, 40);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(64, 23);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Password:";
-			// 
-			// label4
-			// 
-			this.label4.Location = new System.Drawing.Point(0, 40);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(104, 23);
-			this.label4.TabIndex = 6;
-			this.label4.Text = "Database:";
-			// 
-			// txtMSSQLDB
-			// 
-			this.txtMSSQLDB.Location = new System.Drawing.Point(104, 40);
-			this.txtMSSQLDB.Name = "txtMSSQLDB";
-			this.txtMSSQLDB.Size = new System.Drawing.Size(136, 20);
-			this.txtMSSQLDB.TabIndex = 7;
-			this.txtMSSQLDB.Text = "YourDB";
-			this.txtMSSQLDB.TextChanged += new System.EventHandler(this.Fields_TextChanged);
-			// 
-			// lbMSSQLTables
-			// 
-			this.lbMSSQLTables.Location = new System.Drawing.Point(8, 136);
-			this.lbMSSQLTables.Name = "lbMSSQLTables";
-			this.lbMSSQLTables.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-			this.lbMSSQLTables.Size = new System.Drawing.Size(416, 173);
-			this.lbMSSQLTables.TabIndex = 8;
-			// 
-			// label5
-			// 
-			this.label5.Location = new System.Drawing.Point(168, 112);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(96, 23);
-			this.label5.TabIndex = 9;
-			this.label5.Text = "[ MSSQL Tables ]";
-			// 
-			// btnExport
-			// 
-			this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnExport.Location = new System.Drawing.Point(168, 320);
-			this.btnExport.Name = "btnExport";
-			this.btnExport.Size = new System.Drawing.Size(104, 23);
-			this.btnExport.TabIndex = 12;
-			this.btnExport.Text = "[ Export Data ]";
-			this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-			// 
-			// btnGetTables
-			// 
-			this.btnGetTables.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnGetTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.btnGetTables.Location = new System.Drawing.Point(168, 72);
-			this.btnGetTables.Name = "btnGetTables";
-			this.btnGetTables.Size = new System.Drawing.Size(88, 24);
-			this.btnGetTables.TabIndex = 13;
-			this.btnGetTables.Text = "[ Get Tables ]";
-			this.btnGetTables.Click += new System.EventHandler(this.btnGetTables_Click);
-			// 
-			// mainMenu1
-			// 
-			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																					  this.menuItem1,
-																					  this.menuItem3});
-			// 
-			// menuItem1
-			// 
-			this.menuItem1.Index = 0;
-			this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																					  this.menuItem2});
-			this.menuItem1.Text = "&File";
-			// 
-			// menuItem2
-			// 
-			this.menuItem2.Index = 0;
-			this.menuItem2.Text = "E&xit";
-			this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
-			// 
-			// menuItem3
-			// 
-			this.menuItem3.Index = 1;
-			this.menuItem3.Text = "&About";
-			this.menuItem3.Click += new System.EventHandler(this.menuItem3_Click);
-			// 
-			// frmMain
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(432, 345);
-			this.Controls.Add(this.btnGetTables);
-			this.Controls.Add(this.btnExport);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.lbMSSQLTables);
-			this.Controls.Add(this.txtMSSQLDB);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.txtMSSQLPwd);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.txtMSSQLUser);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.txtMSSQLIP);
-			this.Controls.Add(this.label1);
-			this.Menu = this.mainMenu1;
-			this.Name = "frmMain";
-			this.Text = "VPI - MSSQL to MySQL Exporter";
-			this.Load += new System.EventHandler(this.Form1_Load);
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMSSQLIP = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMSSQLUser = new System.Windows.Forms.TextBox();
+            this.txtMSSQLPwd = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMSSQLDB = new System.Windows.Forms.TextBox();
+            this.lbMSSQLTables = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnGetTables = new System.Windows.Forms.Button();
+            this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
+            this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
+            this.menuItem3 = new System.Windows.Forms.MenuItem();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MSSQL Server IP:";
+            // 
+            // txtMSSQLIP
+            // 
+            this.txtMSSQLIP.Location = new System.Drawing.Point(125, 17);
+            this.txtMSSQLIP.Name = "txtMSSQLIP";
+            this.txtMSSQLIP.Size = new System.Drawing.Size(163, 21);
+            this.txtMSSQLIP.TabIndex = 1;
+            this.txtMSSQLIP.Text = "localhost";
+            this.txtMSSQLIP.TextChanged += new System.EventHandler(this.Fields_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(326, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "User:";
+            // 
+            // txtMSSQLUser
+            // 
+            this.txtMSSQLUser.Location = new System.Drawing.Point(384, 17);
+            this.txtMSSQLUser.Name = "txtMSSQLUser";
+            this.txtMSSQLUser.Size = new System.Drawing.Size(125, 21);
+            this.txtMSSQLUser.TabIndex = 3;
+            this.txtMSSQLUser.Text = "hko";
+            this.txtMSSQLUser.TextChanged += new System.EventHandler(this.Fields_TextChanged);
+            // 
+            // txtMSSQLPwd
+            // 
+            this.txtMSSQLPwd.Location = new System.Drawing.Point(384, 43);
+            this.txtMSSQLPwd.Name = "txtMSSQLPwd";
+            this.txtMSSQLPwd.Size = new System.Drawing.Size(125, 21);
+            this.txtMSSQLPwd.TabIndex = 5;
+            this.txtMSSQLPwd.Text = "123";
+            this.txtMSSQLPwd.TextChanged += new System.EventHandler(this.Fields_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(298, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Password:";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(0, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Database:";
+            // 
+            // txtMSSQLDB
+            // 
+            this.txtMSSQLDB.Location = new System.Drawing.Point(125, 43);
+            this.txtMSSQLDB.Name = "txtMSSQLDB";
+            this.txtMSSQLDB.Size = new System.Drawing.Size(163, 21);
+            this.txtMSSQLDB.TabIndex = 7;
+            this.txtMSSQLDB.Text = "ry";
+            this.txtMSSQLDB.TextChanged += new System.EventHandler(this.Fields_TextChanged);
+            // 
+            // lbMSSQLTables
+            // 
+            this.lbMSSQLTables.ItemHeight = 12;
+            this.lbMSSQLTables.Location = new System.Drawing.Point(10, 146);
+            this.lbMSSQLTables.Name = "lbMSSQLTables";
+            this.lbMSSQLTables.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lbMSSQLTables.Size = new System.Drawing.Size(499, 184);
+            this.lbMSSQLTables.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(202, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "[ MSSQL Tables ]";
+            // 
+            // btnExport
+            // 
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExport.Location = new System.Drawing.Point(202, 345);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(124, 24);
+            this.btnExport.TabIndex = 12;
+            this.btnExport.Text = "[ Export Data ]";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnGetTables
+            // 
+            this.btnGetTables.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGetTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetTables.Location = new System.Drawing.Point(202, 78);
+            this.btnGetTables.Name = "btnGetTables";
+            this.btnGetTables.Size = new System.Drawing.Size(105, 25);
+            this.btnGetTables.TabIndex = 13;
+            this.btnGetTables.Text = "[ Get Tables ]";
+            this.btnGetTables.Click += new System.EventHandler(this.btnGetTables_Click);
+            // 
+            // mainMenu1
+            // 
+            this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem1,
+            this.menuItem3});
+            // 
+            // menuItem1
+            // 
+            this.menuItem1.Index = 0;
+            this.menuItem1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem2});
+            this.menuItem1.Text = "&File";
+            // 
+            // menuItem2
+            // 
+            this.menuItem2.Index = 0;
+            this.menuItem2.Text = "E&xit";
+            this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
+            // 
+            // menuItem3
+            // 
+            this.menuItem3.Index = 1;
+            this.menuItem3.Text = "&About";
+            this.menuItem3.Click += new System.EventHandler(this.menuItem3_Click);
+            // 
+            // frmMain
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
+            this.ClientSize = new System.Drawing.Size(576, 402);
+            this.Controls.Add(this.btnGetTables);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbMSSQLTables);
+            this.Controls.Add(this.txtMSSQLDB);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtMSSQLPwd);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtMSSQLUser);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtMSSQLIP);
+            this.Controls.Add(this.label1);
+            this.Menu = this.mainMenu1;
+            this.Name = "frmMain";
+            this.Text = "VPI - MSSQL to MySQL Exporter";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		
@@ -384,8 +385,11 @@ namespace MSSQLtoMySQL
 
 								da.Fill(ds, "Rows");
 
-								string rowbegin = "insert into "+tablename+" values (";
+                                string rowbegin_0 = "insert into " + tablename + " values \n";
+                                sw.Write(rowbegin_0);
+                                string rowbegin = "(";
 								string row = "";
+                                int c1 = 1;
 								foreach(DataRow drRow in ds.Tables["Rows"].Rows)
 								{
 									row = rowbegin;
@@ -403,7 +407,11 @@ namespace MSSQLtoMySQL
 									}
 
 									row = row.Substring(0, row.Length - 1);
-									row += " );";
+									row += " )";
+                                    if (c1++==  ds.Tables["Rows"].Rows.Count)
+                                        row += ";";
+                                    else
+                                        row += ",";
 									sw.Write(row);
 									sw.Write("\n");
 								}

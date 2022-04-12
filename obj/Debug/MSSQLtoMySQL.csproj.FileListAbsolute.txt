@@ -1,0 +1,8 @@
+D:\src\tools\MssqlToMysql\bin\Debug\MSSQLtoMySQL.exe
+D:\src\tools\MssqlToMysql\bin\Debug\MSSQLtoMySQL.pdb
+D:\src\tools\MssqlToMysql\obj\Debug\MSSQLtoMySQL.csprojResolveAssemblyReference.cache
+D:\src\tools\MssqlToMysql\obj\Debug\MSSQLtoMySQL.frmAbout.resources
+D:\src\tools\MssqlToMysql\obj\Debug\MSSQLtoMySQL.frmMain.resources
+D:\src\tools\MssqlToMysql\obj\Debug\MSSQLtoMySQL.csproj.GenerateResource.Cache
+D:\src\tools\MssqlToMysql\obj\Debug\MSSQLtoMySQL.exe
+D:\src\tools\MssqlToMysql\obj\Debug\MSSQLtoMySQL.pdb
